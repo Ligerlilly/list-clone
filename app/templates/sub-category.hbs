@@ -1,3 +1,5 @@
 <h3>{{model.title}}</h3>
-{{listing-add subcategory=model addListing='addListing'}}
+<button class='btn btn-danger button-inline' {{action 'deleteSubCategory' model}}>Delete</button>
+{{listing-add subCategory=model addListing='addListing' class='button-inline'}}
+{{listing-list subCategory=model}}
 {{outlet}}

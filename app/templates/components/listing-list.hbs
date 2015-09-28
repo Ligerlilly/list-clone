@@ -1,0 +1,8 @@
+<ul>
+  {{#each sortedByDateListing as |listing|}}
+    {{#link-to 'listing' listing.id}}{{listing-tile listing=listing}}{{/link-to}}
+  {{/each}}
+</ul>
+
+
+{{yield}}
