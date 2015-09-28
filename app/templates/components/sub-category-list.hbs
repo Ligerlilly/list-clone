@@ -1,0 +1,5 @@
+<ul>
+{{#each category.subCategories as |subCategory|}}
+  {{#link-to 'subCategory' subCategory.id}}{{sub-category-tile subCategory=subCategory}}{{/link-to}}
+{{/each}}
+</ul>

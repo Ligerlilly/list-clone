@@ -1,0 +1,18 @@
+{{#if newListing}}
+  <form>
+    <div class="form-group">
+      <label>Title:</label>
+      {{input value=title id="title" class="form-control"}}
+    </div>
+    <div class="form-group">
+      <label>Content:</label>
+      {{textarea value=content id="content" class="form-control"}}
+    </div>
+    <button class="btn btn-danger" {{action "hideListingForm"}}>Cancel</button>
+    <button class="btn btn-success" {{action "addListing"}}>Save</button>
+  </form>
+{{else}}
+  <button class="btn btn-info" {{action "showListingForm"}}>Add Listing</button>
+{{/if}}
+
+{{yield}}

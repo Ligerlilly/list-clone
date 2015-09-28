@@ -1,0 +1,12 @@
+{{#if newCategory}}
+  <form>
+    <div class='form-group'>
+      <label>Enter Title:</label>
+      {{input value=title id='title' class='form-control'}}
+    </div>
+    <button class='btn btn-danger' {{action 'hideCategoryForm'}}>Cancel</button>
+    <button class='btn btn-success' {{action "addCategory"}}>Save</button>
+  </form>
+{{else}}
+  <button class='btn btn-info' {{action 'showCategoryForm'}}>Add Category</button>
+{{/if}}
