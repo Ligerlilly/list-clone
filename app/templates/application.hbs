@@ -1,11 +1,11 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Itscrap</a>
+      <a class="navbar-brand" href="#">{{#link-to 'index'}}Itscrap{{/link-to}}</a>
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="#">{{#link-to 'index'}}Home{{/link-to}}</a></li>
         <li><a href="#">Page 1</a></li>
         <li><a href="#">Page 2</a></li>
         <li><a href="#">Page 3</a></li>
@@ -16,9 +16,10 @@
 <div class='container'>
   {{#if session.isAuthenticated}}
     Logged in as {{session.currentUser.email}}
-    <button {{action "signOut"}}>Sign out</button>
+    <button class='btn btn-warning' {{action "signOut"}}>Sign out</button>
   {{else}}
-    <button class='btn btn-primary button-inline'{{action "signIn" "password"}}>Sign in</button>
+    {{login-user signIn='signIn' class='button-inline'}}
+    <!-- <button class='btn btn-primary button-inline'{{action "signIn" "password"}}>Sign in</button> -->
   {{/if}}
   {{outlet}}
 </div>

@@ -1,10 +1,13 @@
 import Ember from 'ember';
+
 export default Ember.Route.extend({
   beforeModel: function() {
     return this.get("session").fetch().catch(function() {});
   },
   actions: {
-    signIn: function(provider) {
+    signIn: function(provider, params) {
+
+
       // this.get("session").open("firebase", { provider: provider, email: 'quizathaderat@yohoo.com', password: 'password'}).then(function(data) {
       //   console.log(data.currentUser);
       // });
@@ -20,8 +23,8 @@ export default Ember.Route.extend({
       //   }
       // });
       ref.authWithPassword({
-        email    : "quizathaderat@yahoo.com",
-        password : "password"
+        email    : params.email,
+        password : params.password,
       }, function(error, authData) {
         if (error) {
           console.log("Login Failed!", error);
