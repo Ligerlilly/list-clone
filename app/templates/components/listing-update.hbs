@@ -1,0 +1,15 @@
+{{#if updateListing}}
+  <form>
+    <div class=form-group>
+      <label>Enter Title:</label>
+      {{input value=listing.title id='title' class='form-control'}}
+    </div>
+    <div class='form-group'>
+      <label>Enter Content:</label>
+      {{textarea value=listing.content id='content' class='form-control'}}
+    </div>
+    <button class='btn btn-success' {{action 'editListing' listing}}>Save</button>
+  </form>
+{{else}}
+  <button class='btn btn-info button-inline btn-xs' {{action 'showUpdateForm'}}>Edit</button>
+{{/if}}

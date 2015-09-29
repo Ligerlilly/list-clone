@@ -26,10 +26,15 @@ export default Ember.Route.extend({
         });
         category.destroyRecord();
       });
-
-
-
-
+      this.transitionTo('index');
+    },
+    editCategory(category, params) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key] !== undefined) {
+          category.set(key, params[key]);
+        }
+      });
+      category.save();
       this.transitionTo('index');
     }
   }

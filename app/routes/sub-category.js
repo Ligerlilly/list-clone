@@ -24,6 +24,15 @@ export default Ember.Route.extend({
         });
         this.transitionTo('index')
       }
+    },
+    editSubCategory(subCategory, params) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key] !== undefined) {
+          subCategory.set(key, params[key]);
+        }
+      });
+      subCategory.save();
+      this.transitionTo('subCategory', subCategory.id);
     }
   }
 });

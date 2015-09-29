@@ -1,0 +1,11 @@
+{{#if updateCategory}}
+  <form>
+    <div class=form-group>
+      <label>Enter Title:</label>
+      {{input value=category.title id='title' class='form-control'}}
+    </div>
+    <button class='btn btn-success' {{action 'editCategory' category}}>Save</button>
+  </form>
+{{else}}
+  <button class='btn btn-info button-inline' {{action 'showUpdateForm'}}>Edit</button>
+{{/if}}

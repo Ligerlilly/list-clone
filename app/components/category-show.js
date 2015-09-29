@@ -7,9 +7,11 @@ export default Ember.Component.extend({
     },
     delete(category) {
       if (confirm("Are you sure?")) {
-        this.sendAction('delete', category); 
+        this.sendAction('delete', category);
       }
-
+    },
+    editCategory(category, params) {
+      this.sendAction('editCategory', category, params);
     }
 
   }
