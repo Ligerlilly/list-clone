@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  
   model() {
     return this.store.findAll('category');
   },
@@ -9,7 +10,7 @@ export default Ember.Route.extend({
       var category = this.store.createRecord('category', params);
       category.save();
       this.transitionTo('index');
-      
+
     }
   }
 });

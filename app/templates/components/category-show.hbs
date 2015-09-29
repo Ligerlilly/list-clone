@@ -1,6 +1,8 @@
 
 <h2>Category: {{category.title}}</h2>
-<button class='btn btn-danger button-inline' {{action 'delete' category}}>Delete</button>
-{{category-update category=category editCategory='editCategory' class='button-inline'}}
+{{#if session.isAuthenticated}}
+  <button class='btn btn-danger button-inline' {{action 'delete' category}}>Delete</button>
+  {{category-update category=category editCategory='editCategory' class='button-inline'}}
+{{/if}}
 {{sub-category-add category=category addSubCategory="addSubCategory" class='button-inline'}}
 {{sub-category-list category=category}}
