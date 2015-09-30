@@ -7,7 +7,6 @@ export default Ember.Route.extend({
   actions: {
     signIn: function(provider, params) {
 
-
       // this.get("session").open("firebase", { provider: provider, email: 'quizathaderat@yohoo.com', password: 'password'}).then(function(data) {
       //   console.log(data.currentUser);
       // });
@@ -36,6 +35,9 @@ export default Ember.Route.extend({
     },
     signOut: function() {
       this.get("session").close();
+    },
+    search(params) {
+      this.transitionTo('searchResults', params);
     }
   }
 });

@@ -24,3 +24,7 @@ p {
 .button-inline {
   display: inline;
 }
+
+#id {
+  display: inline;
+}
