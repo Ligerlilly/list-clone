@@ -5,7 +5,6 @@ export default Ember.Route.extend({
     return this.store.findAll('listing').then(function(listings) {
       var regex = new RegExp(params.searchQuery);
       return listings.filter(function(listing) {
-        debugger;
         return (regex.test(listing.get('title')) || regex.test(listing.get('content')));
       });
     });
